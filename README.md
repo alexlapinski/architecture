@@ -19,6 +19,8 @@ application, it is the first one being developed.
 
 Plans are to build this in reason-react, as a static site.
 
+[Project Site](https://github.com/alexlapinski/my-recovery.website)
+
 #### 2. API
 This is the backing API, it will allow the user to save progress and load
 personal information.
