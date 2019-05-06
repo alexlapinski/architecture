@@ -1,0 +1,39 @@
+@startuml
+
+skinparam componentStyle uml2
+
+skinparam component {
+  backgroundColor<<future>> #EEE
+  borderColor<<future>> #222
+  borderStyle<<future>> dashed
+}
+
+package "Phase 1" {
+  component "1. API" <<api>> as api
+  component "2. Dashboard" <<Website>> as web
+  database "3. Postgres DB" <<database>> as db
+}
+
+package "Phase 2" {
+  component "4. OAuth Provider" <<oauth2>> as oauth
+}
+
+package "Phase 3 / Beyond" {
+  component "iOS Application" <<future>> as ios
+  component "Android Application" <<future>> as droid
+}
+
+
+
+web -down-> api
+ios -down-> api
+droid -down-> api
+
+api -left-> db
+
+web -> oauth
+ios -> oauth
+droid -> oauth
+api -> oauth
+
+@enduml
